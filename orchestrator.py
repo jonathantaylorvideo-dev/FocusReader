@@ -9,6 +9,14 @@ QUARANTINE_DIR = "./Quarantine"
 
 
 def process_inbox():
+    """Route every file in INBOX_DIR to PROCESSED_DIR or QUARANTINE_DIR.
+
+    Each file's contents are read and passed to
+    schema_validator.validate_payload(). A file is moved to PROCESSED_DIR
+    if validation succeeds and the payload doesn't request escalation
+    (data["escalate"] is falsy); otherwise it's moved to QUARANTINE_DIR.
+    Subdirectories of INBOX_DIR are skipped.
+    """
     for filename in os.listdir(INBOX_DIR):
         src_path = os.path.join(INBOX_DIR, filename)
         if not os.path.isfile(src_path):
