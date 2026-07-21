@@ -1,0 +1,24 @@
+Repository summary
+===================
+
+Location: /workspace
+Git: repository initialized on branch "main", but no commits yet.
+
+Directory listing:
+- Inbox/      (empty)
+- Processed/  (empty)
+- Quarantine/ (empty)
+- tests/      (empty)
+
+What this repo appears to do:
+Based solely on the directory names, this looks like the scaffold for a
+file-processing pipeline with a staged workflow:
+  1. Inbox      - incoming/unprocessed files land here
+  2. Processed  - files that were successfully handled get moved here
+  3. Quarantine - files that failed validation/processing (e.g., suspicious
+                  or malformed input) get moved here instead
+  4. tests      - test suite for the pipeline logic
+
+No source code, configuration, or documentation currently exists in the
+repo, so this is an early-stage / placeholder project structure rather
+than a working implementation.
